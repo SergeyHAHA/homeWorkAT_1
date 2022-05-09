@@ -19,7 +19,7 @@ public class Tests extends WebDriverSettings {
         PageFactoryGoogle googlePF = PageFactory.initElements(chromeDriver, PageFactoryGoogle.class);
         googlePF.search("Гладиолус");
         var result = googlePF.getSearchResult();
-        Assertions.assertFalse(
+        Assertions.assertTrue(
                 result.stream().filter(x->x.getText().contains("Википедия"))
                                 .anyMatch(x->x.getText().contains("Гладиолус"))
         );
